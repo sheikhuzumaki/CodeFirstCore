@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<StoreProcedure>
+
+<div>
+    <table class="table-primary">
+        <tr>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+            <tr>
+                <td>@item.Guid</td>
+            </tr>
+            <tr>
+                <td>@item.Id</td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Employee>
+
+<div>
+    <a href="@this.Url.Action("Add", "Home")" class="btn btn-success">Add Employee</a>
+</div>
+<br />
+<div>
+    @if (Model.Count > 0)
+    {
+    <table class="table-primary">
+        <tr>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+            <tr>
+                <td><a href="@this.Url.Action("Edit", "Home", new { Id = item.Id})" class="btn btn-info">Edit</a></td>
+            </tr>
+            <tr>
+                <td><a href="@this.Url.Action("Delete", "Home", new { Id = item.Id})" class="btn btn-danger" >Delete</a></td>
+            </tr>
+        }
+
+    </table>
+    }
+
+    @if (Model.Count == 0)
+    {
+        <p>Nothing In Data Base</p>
+    }
+</div>

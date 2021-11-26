@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model CodeFirst.Models.Employee
+
+<div>
+    <form asp-action="Edit">
+        <label>Edit</label>
+        <input type="text" name="Name" value="@Model.Name" />
+        <input  type="hidden" name="Id" value="@Model.Id" />
+        <input type="submit" class="btn btn-info" />
+    </form>
+</div>
